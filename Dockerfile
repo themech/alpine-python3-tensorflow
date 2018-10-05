@@ -11,12 +11,12 @@ ENV LOCAL_RESOURCES 6144,1.0,1.0    # RAM, CPU, IO, building TF is resource-heav
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
 
 RUN apk upgrade --update \
-    && apk add --no-cache python3 py3-numpy py3-numpy-f2py libpng libjpeg-turbo build-base \
+    && apk add --no-cache python3 py3-numpy py3-numpy-f2py libpng libjpeg-turbo \
     && rm -rf /usr/bin/python \
     && ln -s /usr/bin/python3 /usr/bin/python \
     && pip3 install -U --no-cache-dir pip setuptools wheel \
     && : install tools needed during the build process \
-    && apk add --no-cache --virtual=.build-deps curl bash openjdk8 gcc g++ linux-headers zip musl-dev patch python3-dev py-numpy-dev \
+    && apk add --no-cache --virtual=.build-deps curl bash openjdk8 build-base gcc g++ linux-headers zip musl-dev patch python3-dev py-numpy-dev \
     && : download and build bazel \
     && cd /tmp \
     && curl -SLO https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-dist.zip \
