@@ -7,7 +7,8 @@ LABEL maintainer="mech <mech@themech.net>"
 
 ENV TENSORFLOW_VERSION 1.10.1
 ENV BAZEL_VERSION 0.17.2
-ENV LOCAL_RESOURCES 6144,1.0,1.0    # RAM, CPU, IO, building TF is resource-heavy
+# resources for bazel when building tensorflow: RAM, CPU, IO
+ENV LOCAL_RESOURCES 6144,1.0,1.0
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
 
 RUN apk upgrade --update \
