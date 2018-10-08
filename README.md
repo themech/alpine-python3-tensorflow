@@ -3,7 +3,7 @@ python3 &amp; tensorflow 1.10 based on alpine
 
 ## Building the image
 
-It will downIt may take severals hours to build
+It may take severals hours to build
 
 ## Easy way
 
