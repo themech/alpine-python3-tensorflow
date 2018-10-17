@@ -12,7 +12,7 @@ ENV LOCAL_RESOURCES 6144,1.0,1.0
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
 
 RUN apk upgrade --update \
-    && apk add --no-cache python3 py3-numpy py3-numpy-f2py libpng libjpeg-turbo \
+    && apk add --no-cache python3 py3-numpy py3-numpy-f2py libpng libjpeg-turbo libstdc++ \
     && rm -rf /usr/bin/python \
     && ln -s /usr/bin/python3 /usr/bin/python \
     && pip3 install -U --no-cache-dir pip setuptools wheel \
